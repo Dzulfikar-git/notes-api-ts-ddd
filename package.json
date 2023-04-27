@@ -1,0 +1,48 @@
+{
+  "name": "notes-api-ts-ddd",
+  "version": "1.0.0",
+  "description": "Notes API build with TS + Node while implementing DDD",
+  "main": "index.js",
+  "repository": "https://github.com/Dzulfikar-git/notes-api-ts-ddd.git",
+  "author": "Dzulfikar Dzulfikar <kardzulfi1805@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon src/index.js",
+    "build": "rimraf ./dist && tsc"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.13",
+    "@types/morgan": "^1.9.4",
+    "@types/uuid": "^9.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "concurrently": "^8.0.1",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "prettier": "2.8.8",
+    "sequelize-cli": "^6.6.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.1.5",
+    "jest": "^29.5.0",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.2.4",
+    "nodemon": "^2.0.22",
+    "sequelize": "^6.31.0",
+    "sequelize-typescript": "^2.1.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "uuid": "^9.0.0",
+    "uuidv4": "^6.2.13"
+  }
+}

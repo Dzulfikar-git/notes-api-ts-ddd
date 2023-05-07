@@ -5,6 +5,7 @@ import { userRepo } from '../../../repos';
 import { createUserController } from '../../../usesCases/createUser';
 import { getUserProfileController } from '../../../usesCases/getUserProfile';
 import { loginController } from '../../../usesCases/login';
+import { logoutController } from '../../../usesCases/logout';
 import { refreshTokenController } from '../../../usesCases/refreshToken';
 
 const userRouter = express.Router();
@@ -16,7 +17,7 @@ userRouter.get('/profile', middleware.ensureAuthenticated(), (req, res) => getUs
 
 userRouter.post('/login', (req, res) => loginController.execute(req, res));
 
-// userRouter.post('/logout', middleware.ensureAuthenticated(), (req, res) => logoutController.execute(req, res));
+userRouter.post('/logout', middleware.ensureAuthenticated(), (req, res) => logoutController.execute(req, res));
 
 userRouter.post('/token/refresh', (req, res) => refreshTokenController.execute(req, res));
 

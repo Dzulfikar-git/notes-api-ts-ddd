@@ -24,7 +24,7 @@ export class Middleware {
           req.decoded = decoded;
           return next();
         } else {
-          return this.endRequest(403, 'Auth token not found. User is probably not logged in. Please login again.', res);
+          return this.endRequest(403, 'Auth token failed, token might expires or user not logged in.', res);
         }
       } else {
         return this.endRequest(403, 'No access token provided', res);

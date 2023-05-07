@@ -1,3 +1,4 @@
+import * as jwt from 'jsonwebtoken';
 import passport from 'passport';
 import { ExtractJwt, Strategy, StrategyOptions } from 'passport-jwt';
 import { authConfig } from '../../../../config';
@@ -26,6 +27,12 @@ export class Passport {
         }
         return resolve(payload);
       })({ headers: { authorization: token } });
+    });
+  }
+
+  public static signJWT(userId: string, username: string): string {
+    return jwt.sign({ userId: userId, username: username }, authConfig.secret, {
+      expiresIn: authConfig.expiresIn,
     });
   }
 

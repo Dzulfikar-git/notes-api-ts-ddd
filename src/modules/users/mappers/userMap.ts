@@ -14,7 +14,7 @@ export class UserMap implements Mapper<User> {
 
   public static toDomain(raw: any): User {
     const userNameOrError = UserName.create({ name: raw.username });
-    const userPasswordOrError = UserPassword.create({ value: raw.user_password, hashed: true });
+    const userPasswordOrError = UserPassword.create({ value: raw.password, hashed: true });
 
     const userOrError = User.create(
       {

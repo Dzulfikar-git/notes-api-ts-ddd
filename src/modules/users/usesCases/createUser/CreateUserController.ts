@@ -1,7 +1,7 @@
 import * as express from 'express';
 import { BaseController } from '../../../../shared/infra/http/models/BaseController';
 import { DecodedExpressRequest } from '../../infra/http/models/decodedRequest';
-import { CreateUserDTO } from './CreateUserDto';
+import { CreateUserDTO } from './CreateUserDTO';
 import { CreateUserErrors } from './CreateUserErrors';
 import { CreateUserUseCase } from './CreateUserUseCase';
 
@@ -20,6 +20,7 @@ export class CreateUserController extends BaseController {
       const result = await this.useCase.execute(dto);
       if (result.isLeft()) {
         const error = result.value;
+
         switch (error.constructor) {
           case CreateUserErrors.UsernameTakenError:
             return this.conflict(res, error.getErrorValue().message);

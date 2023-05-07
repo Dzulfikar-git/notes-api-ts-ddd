@@ -23,8 +23,9 @@ export class SequelizeUserRepo implements IUserRepo {
 
   async getUserByUserName(username: UserName | string): Promise<User> {
     const user = await this.userModel.findOne({
-      where: { username: username instanceof UserName ? <UserName>username : username },
+      where: { username: username instanceof UserName ? (<UserName>username).value : username },
     });
+    console.log(user.username);
     if (!!user === false) throw new Error('User not found');
     return UserMap.toDomain(user);
   }

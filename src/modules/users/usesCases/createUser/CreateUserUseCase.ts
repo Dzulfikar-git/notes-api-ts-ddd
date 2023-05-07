@@ -5,7 +5,7 @@ import { User } from '../../domain/user';
 import { UserName } from '../../domain/userName';
 import { UserPassword } from '../../domain/userPassword';
 import { IUserRepo } from '../../repos/userRepo';
-import { CreateUserDTO } from './CreateUserDto';
+import { CreateUserDTO } from './CreateUserDTO';
 import { CreateUserErrors } from './CreateUserErrors';
 
 type Response = Either<CreateUserErrors.UsernameTakenError | AppError.UnexpectedError | Result<any>, Result<void>>;

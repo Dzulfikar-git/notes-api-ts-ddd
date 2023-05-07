@@ -20,7 +20,7 @@ export class GetUserProfileUseCase {
 
   async execute(request: GetUserProfileDTO): Promise<Response> {
     try {
-      const userIdOrError = UserId.create(new UniqueEntityID('a67bf1f6-b94a-49d9-afb0-06dd4e8dfee8'));
+      const userIdOrError = UserId.create(new UniqueEntityID(request.userId));
 
       const dtoResult = Result.combine([userIdOrError]);
 
